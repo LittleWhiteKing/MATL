@@ -95,7 +95,7 @@ class main:
         return accuracy, roc_auc, pr_auc
 
     def cross_validate(self, samples_file_name, k_folds=5):
-        dataset = SSDataset_690(samples_file_name, False)  # 假设这是你的数据集类
+        dataset = SSDataset_690(samples_file_name, False)  
         kfold = KFold(n_splits=k_folds, shuffle=False)
         accuracies = []
         roc_aucs = []
@@ -175,7 +175,7 @@ class main:
 
 #     results_df = pd.DataFrame(results)
 #     results_df.to_csv('modeling_result_DSAC.csv', index=False)
-#     print("modeling_result.csv 文件中。")
+#     print("modeling_result.csv")
 #     return results_df
 # run_modeling_for_datasets('/home/fanjinli/myproject/aDNA_TFBSs/Dataset.xlsx')
 # #
