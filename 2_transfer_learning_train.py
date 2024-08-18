@@ -152,7 +152,7 @@ class main:
 #         
 #         print(f"{dataset_name}")
 #        
-#         model_instance = main(model=MTCCA(), pretrained_model_path=pretrained_model_path)
+#         model_instance = main(model=MATL(), pretrained_model_path=pretrained_model_path)
 #     
 #         accuracy, roc_auc, pr_auc = model_instance.run(samples_file_name=dataset_name)
 #      
