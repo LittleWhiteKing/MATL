@@ -46,10 +46,9 @@ class main:
     def learn(self, TrainLoader, ValidateLoader):
         path = '/home/fanjinli/myproject/aDNA_TFBSs/model_pth'
 
-        best_accuracy = 0.0  # 初始化最佳准确率为0
-        best_model_path = None  # 初始化最佳模型路径为None
+        best_accuracy = 0.0  
+        best_model_path = None  
 
-        # 开始模型的循环训练
 
         for epoch in range(self.epochs):
             self.model.train()
@@ -126,7 +125,6 @@ class main:
                                         drop_last=True,
                                         batch_size=self.batch_size,shuffle=True,
                                         num_workers=0)
-        # 验证集的作用是调整学习率。
         ValidateLoader = loader.DataLoader(dataset=Validate_Set,
                                            drop_last=True,
                                            batch_size=self.batch_size, shuffle=False,
@@ -146,32 +144,29 @@ class main:
 
 #
 # def run_modeling_for_datasets(names_file, pretrained_model_path):
-#     """
-#     进行所有数据的运行，单独测试这个模型，得到的结果放到excel中
-#     """
-#     # 读取数据集名称
-#     dataset_names = pd.read_excel(names_file)  # 修改此处以读取 Excel 文件
-#     results = []  # 用于存储每个数据集的结果
-#     # 遍历每个数据集名称
+#   
+#     dataset_names = pd.read_excel(names_file)  
+#     results = []  
+#     
 #     for index, row in dataset_names.iterrows():
-#         dataset_name = row[0]  # 假设数据集名称在第一列
-#         print(f"开始建模：{dataset_name}")
-#         # 每个数据集初始化一个新的模型实例，加载预训练模型
+#         
+#         print(f"{dataset_name}")
+#        
 #         model_instance = main(model=MTCCA(), pretrained_model_path=pretrained_model_path)
-#         # 运行模型
+#     
 #         accuracy, roc_auc, pr_auc = model_instance.run(samples_file_name=dataset_name)
-#         # 存储结果
+#      
 #         results.append({
 #             'Dataset': dataset_name,
 #             'Accuracy': accuracy,
 #             'ROC AUC': roc_auc,
 #             'PR AUC': pr_auc
 #         })
-#         print(f"模型建模完成：{dataset_name}, 准确率：{accuracy}, ROC AUC：{roc_auc}, PR AUC：{pr_auc}")
-#     # 可以将结果保存到CSV文件或返回
+#         print(f"{dataset_name}, acc：{accuracy}, ROC AUC：{roc_auc}, PR AUC：{pr_auc}")
+#    
 #     results_df = pd.DataFrame(results)
 #     results_df.to_csv('modeling_results_trans710.csv', index=False)
-#     print("所有建模过程已完成，结果已保存到 modeling_results_trans710 文件中。")
+#     print(" modeling_results_trans710 ")
 #     return results_df
 #
 # pretrained_path = '/home/fanjinli/myproject/aDNA_TFBSs/model_pth/my_model_epoch-3_acc-0.7697.pth'
