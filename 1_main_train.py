@@ -154,18 +154,17 @@ class main:
 
 
 # def run_modeling_for_datasets(names_file):
-#     # 读取数据集名称
-#     dataset_names = pd.read_excel(names_file)  # 修改此处以读取 Excel 文件
-#     results = []  # 用于存储每个数据集的结果
-#     # 遍历每个数据集名称
+
+#     dataset_names = pd.read_excel(names_file)  
+#     results = [] 
+
 #     for index, row in dataset_names.iterrows():
-#         dataset_name = row[0]  # 假设数据集名称在第一列
-#         print(f"开始建模：{dataset_name}")
-#         # 每个数据集初始化一个新的模型实例
-#         model_instance = main(model=dsac())
-#         # 运行模型
+#         dataset_name = row[0] 
+#         print(f"{dataset_name}")
+
+
 #         accuracy, roc_auc, pr_auc = model_instance.run(samples_file_name=dataset_name)
-#         # 存储结果
+
 #         results.append({
 #             'Dataset': dataset_name,
 #             'Accuracy': accuracy,
@@ -173,7 +172,7 @@ class main:
 #             'PR AUC': pr_auc
 #         })
 #         print(f"{dataset_name}, ACC：{accuracy}, ROC AUC：{roc_auc}, PR AUC：{pr_auc}")
-#     # 可以将结果保存到CSV文件或返回
+
 #     results_df = pd.DataFrame(results)
 #     results_df.to_csv('modeling_result_DSAC.csv', index=False)
 #     print("modeling_result.csv 文件中。")
