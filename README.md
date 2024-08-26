@@ -20,5 +20,4 @@ MATL takes two files as input: the Sequence file and the Shape file.The Sequence
 Run the `1_main_train.py` to train the data and get the results.  
 
 # Finally
-Thank you for taking your time to study my research. I hope my research can bring you some inspiration and insights, and I hope it can become a powerful tool. Finally, I wish you all the best
-
+Thank you for taking your time to study my research. I hope my research can bring you some inspiration and insights, and I hope it can become a powerful tool.
